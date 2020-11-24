@@ -1,0 +1,52 @@
+
+<div class="container-fluid">
+    <form [formGroup]="showcaseForm">
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-md-6">
+                    <label>{{ 'BREED' | translate }}</label>
+                    <select class="form-control" formControlName="breedControl" (change)="breedChanged()">
+                        <option [value]=""></option>
+                        <option *ngFor="let breed of breeds" [value]="breed">{{ breed }}</option>
+                    </select>
+                </div>
+                <div class="col-md-6" *ngIf="subbreeds && subbreeds.length > 0">
+                    <label>{{ 'SUBBREED' | translate }}</label>
+                    <select class="form-control" formControlName="subbreedControl" (change)="subbreedChanged()">
+                        <option [value]=""></option>
+                        <option *ngFor="let subbreed of subbreeds" [value]="subbreed">{{ subbreed }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" *ngIf="imageSources && imageSources.length > 0">
+            <div class="form-row justify-content-center" *ngFor="let image of imageSources
+            | paginate: { id: 'images',
+            itemsPerPage: pagination.pageSize,
+            currentPage: pagination.page,
+            totalItems: pagination.total }">
+                <img class="m-1 img-fluid"
+                    src="{{image}}">                
+            </div>
+            <div class="form-row justify-content-center mt-2">
+                <pagination-controls id="images"
+                    (pageChange)="pageChanged($event)"
+                    (pageBoundsCorrection)="pageChanged($event)"
+                    responsive="true"
+                    previousLabel="{{ 'PREVIOUS' | translate }}"
+                    nextLabel="{{ 'NEXT' | translate }}"
+                    screenReaderPaginationLabel="{{ 'PAGINATION' | translate }}"
+                    screenReaderPageLabel="{{ 'PAGE' | translate }}"
+                    screenReaderCurrentLabel="{{ 'ON_PAGE' | translate }}">
+                </pagination-controls>
+            </div>
+            <div class="form-row justify-content-center">
+                <label class="align-self-center mb-0">{{ 'IMAGES_PER_PAGE' | translate }}:</label>
+                <select class="form-control page-size ml-2" formControlName="pageSizeControl" (change)="pageSizeChanged()">
+                    <option *ngFor="let pageSize of pagination.pageSizes | listFilter: pagination.total" [value]="pageSize">{{ pageSize }}</option>
+                    <option *ngIf="pagination.total > pagination.pageSizes[pagination.pageSizes.length-1]" [value]="pagination.total">{{ 'ALL' | translate }}</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div>

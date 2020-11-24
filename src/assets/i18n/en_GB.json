@@ -1,0 +1,12 @@
+{
+    "BREED": "Breed",
+    "SUBBREED": "Subbreed",
+    "IMAGES_PER_PAGE": "Images per page",
+    "PREVIOUS": "Previous",
+    "NEXT": "Next",
+    "PAGE": "Page",
+    "ON_PAGE": "You're on page",
+    "ALL_BREEDS_REQUEST_ERROR": "An error occurred while recovering list of breeds, please check your connection and refresh this page",
+    "BREED_IMAGE_REQUEST_ERROR": "An error occurred while recovering selected breed images, please check your connection and refresh this page",
+    "ALL": "All"
+}

@@ -1,0 +1,12 @@
+{
+    "BREED": "Raza",
+    "SUBBREED": "Subraza",
+    "IMAGES_PER_PAGE": "Imágenes por página",
+    "PREVIOUS": "Anterior",
+    "NEXT": "Siguiente",
+    "PAGE": "Página",
+    "ON_PAGE": "Estás en la página",
+    "ALL_BREEDS_REQUEST_ERROR": "Ha ocurrido un error al tratar de recuperar la lista de razas, por favor, compruebe su conexión y refresque esta página",
+    "BREED_IMAGE_REQUEST_ERROR": "Ha ocurrido un error al tratar de recuperar las imágenes de la raza seleccionada, por favor, compruebe su conexión y refresque esta página",
+    "ALL": "Todas"
+}
